@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf - Stephan Epp</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 1.5;
+            color: #2c3e50;
+            font-size: 10pt;
+            background: white;
+        }
+
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+        }
+
+        .container {
+            background: white;
+            padding: 0;
+            width: 100%;
+        }
+
+        .header {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .header h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header .subtitle {
+            text-align: center;
+            color: #3498db;
+            font-size: 1em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 12px;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        table td {
+            padding: 8px 6px;
+            vertical-align: top;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 0.95em;
+        }
+
+        .date-col {
+            width: 28%;
+            font-weight: 600;
+            color: #667eea;
+            white-space: nowrap;
+        }
+
+        .content-col {
+            width: 72%;
+        }
+
+        .company {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.05em;
+        }
+
+        .position {
+            font-style: italic;
+            margin-bottom: 5px;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .description {
+            color: #34495e;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tech-category {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+            transition: transform 0.2s;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-category h4 {
+            margin: 0 0 6px 0;
+            color: #667eea;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .tech-list {
+            font-size: 0.85em;
+            line-height: 1.4;
+            color: #34495e;
+        }
+
+        .certifications {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+            margin-top: 10px;
+        }
+
+        .cert-item {
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px dashed #bdc3c7;
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+
+        .cert-details {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+
+        .achievement-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+
+        .signature-section {
+            text-align: left;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        @media print {
+            body {
+                font-size: 10pt;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+            }
+
+            .tech-category:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Stephan Epp</h1>
+            <div class="subtitle">Senior Software Entwickler | M.Sc. Informatik</div>
+            <div class="contact-info">
+                <div><strong>Adresse:</strong> Otto-Brenner-Straße 77, 33607 Bielefeld</div>
+                <div><strong>Geboren:</strong> 29.08.1986, Bielefeld</div>
+                <div><strong>Telefon:</strong> 0163 8140605</div>
+                <div><strong>Familienstand:</strong> Verheiratet, fünf Kinder</div>
+                <div><strong>E-Mail:</strong> Stephan_Epp@web.de</div>
+                <div><strong>E-Mail:</strong> hjstephan86@gmail.com</div>
+                <div><strong>GitHub:</strong> https://github.com/hjstephan</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Profil</h2>
+            <p
+                style="background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 3px solid #3498db; font-size: 0.95em;">
+                Erfahrener Senior Software Entwickler mit umfassender Expertise in der Entwicklung komplexer
+                Softwarelösungen für verschiedene Branchen (Automotive, Verkehrstechnik, Finanzverwaltung). Breites
+                Technologie-Spektrum mit Schwerpunkten in <strong>Jakarta EE</strong>, <strong>Python
+                    (FastAPI)</strong>, <strong>.NET/Entity Framework</strong>, <strong>PostgreSQL/Oracle SQL</strong>
+                sowie in der <strong>Embedded Entwicklung in C</strong> und
+                hardwarenaher Programmierung mit <strong>VHDL/Verilog</strong>. Nachgewiesene Erfolge in
+                Anforderungsanalyse, Software-Architektur, Testing und Deployment.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>🏆 Besondere Erfolge</h2>
+            <table>
+                <tr>
+                    <td class="date-col">Universität Paderborn (2013)</td>
+                    <td class="content-col">
+                        <div class="company">Entwicklung eines Algorithmus</div>
+                        <div class="description">
+                            • Wissenschaftliches Arbeiten: "Learning M-DNF in Boolean Circuits"<br>
+                            • Korrektheitsbeweis und Laufzeitanalyse des Algorithmus<br>
+                            • Java-Implementierung und experimentelle Analyse<br>
+                            <span class="achievement-badge">Wissenschaft</span><span class="achievement-badge">Note
+                                1,6</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">dSPACE GmbH (2015)</td>
+                    <td class="content-col">
+                        <div class="company">Signal Editor für AutomationDesk & ControlDesk NG</div>
+                        <div class="description">
+                            • Entwicklung einer Common Component für signalbasiertes Testen<br>
+                            • Produkt-Idee: Signalbasiertes Testen in der Testautomatisierung<br>
+                            • Produktpräsentation: <a href="https://www.youtube.com/watch?v=GIzrmQBHw2A" target="_blank"
+                                style="color: #3498db;">YouTube Video verfügbar</a><br>
+                            <span class="achievement-badge">Innovation</span><span
+                                class="achievement-badge">Architektur</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">Hella GmbH (2019)</td>
+                    <td class="content-col">
+                        <div class="company">Dezentrale NV-Datengenerierung aus Rational Rhapsody</div>
+                        <div class="description">
+                            • Entwicklung eines Entwicklungsprozesses und Java-Plugins für Rhapsody nach V-Modell<br>
+                            • Code Generierung aus UML-Profil für modellgetriebene Entwicklung<br>
+                            • Release-Ende: Generierung auf Architektur-Ebene<br>
+                            • Während des Release: Generierung auf Modul-Ebene<br>
+                            <span class="achievement-badge">Innovation</span>
+                            <span class="achievement-badge">Software Engineering</span>
+                            <span class="achievement-badge">UML-Profil</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">Peter Berghaus GmbH (2024)</td>
+                    <td class="content-col">
+                        <div class="company">Integrationstests nach Zyklomatischer Komplexität</div>
+                        <div class="description">
+                            • Hohe Testüberdeckung durch komplexitätsgetriebenen Ansatz<br>
+                            • Absteigende Sortierung kritischer Methoden als *.txt-Datei in Git<br>
+                            • Ermöglicht Entwicklern gezielte Refaktorierung der kritischsten Methoden<br>
+                            • Kontinuierliche Verbesserung durch Commit reduzierter Komplexitätswerte<br>
+                            <span class="achievement-badge">Innovation</span>
+                            <span class="achievement-badge">Code-Coverage</span>
+                            <span class="achievement-badge">Zyklomatische Komplexität</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>💼 Beruflicher Werdegang</h2>
+            <table>
+                <tr>
+                    <td class="date-col">11/2023 – 03/2024</td>
+                    <td class="content-col">
+                        <div class="company">Peter Berghaus GmbH, Bielefeld</div>
+                        <div class="position">Senior Software Entwickler, Verkehrstechnik</div>
+                        <div class="description">
+                            • Erstellung von Reportings/Auswertungen (Batterieverbrauch, Kfz-Geschwindigkeiten)<br>
+                            • Entwicklung von Testumgebungen und REST-API Erweiterungen<br>
+                            • Implementierung von Unittest, Integrationstests und Audit Logs<br>
+                            <span class="highlight">Bewertung: "zu unserer vollen Zufriedenheit"</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">07/2023 – 09/2023</td>
+                    <td class="content-col">
+                        <div class="company">SALZ Automation GmbH, Bad Salzuflen</div>
+                        <div class="position">Qualitätssicherung, Automatisierung</div>
+                        <div class="description">
+                            • Automatisierung von Softwaretests mit LDRA Testtool<br>
+                            • Dokumentation mit Visure Requirements Management<br>
+                            • Versionsverwaltung mit Git und professioneller Kundenkontakt<br>
+                            <span class="highlight">Bewertung: "zu unserer vollen Zufriedenheit"</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">12/2022 – 05/2023</td>
+                    <td class="content-col">
+                        <div class="company">Rechenzentrum der Finanzverwaltung NRW, Paderborn</div>
+                        <div class="position">Technische Produktbetreuung, Finanzverwaltung</div>
+                        <div class="description">
+                            • Koordination und Begleitung des Einsatzes von KONSENS-Produkten<br>
+                            • Software-Fehleranalyse und Abstimmung mit Entwicklungsbereich<br>
+                            • Produkt- und Prozess-Dokumentation, Einarbeitung in COBOL<br>
+                            <span class="highlight">Bewertung: "zu unserer Zufriedenheit"</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">04/2017 – 04/2019</td>
+                    <td class="content-col">
+                        <div class="company">Hella GmbH & Co. KGaA, Lippstadt</div>
+                        <div class="position">Software Entwickler, Software Architekt, Automotive</div>
+                        <div class="description">
+                            • SW-Architektur im Kundenprojekt, Änderungsanfragen und Fehleranalyse<br>
+                            • Tool- und Prozessentwicklung für NonVolatile Daten (Modellierung & Generierung)<br>
+                            • Software-Architektur für CyberSecurity-Anforderungen<br>
+                            • Zusammenarbeit mit internationalen HELLA Standorten<br>
+                            <span class="highlight">Bewertung: "in bester Weise entsprochen"</span> <span
+                                class="achievement-badge">AUTOSAR</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">05/2016 – 03/2017</td>
+                    <td class="content-col">
+                        <div class="company">Deutsche Post Adress GmbH & Co. KG, Gütersloh</div>
+                        <div class="position">Software Entwickler, Adress-Recherche</div>
+                        <div class="description">
+                            • Vollständiger Software-Entwicklungszyklus: Analyse, Implementierung, Testing<br>
+                            • Unit Tests, Integrationstests, Inbetriebnahme und 2nd Level Support<br>
+                            <span class="achievement-badge">Java EE 7</span> <span
+                                class="achievement-badge">JPA/CDI</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">04/2013 – 11/2015</td>
+                    <td class="content-col">
+                        <div class="company">dSPACE GmbH, Paderborn</div>
+                        <div class="position">Software Entwickler, Automotive/Luft- und Raumfahrt</div>
+                        <div class="description">
+                            • Neuentwicklung und Erweiterung des AutomationDesk Testautomatisierungsprodukts<br>
+                            • Steuergeräte-Diagnose, Messen und Kalibrieren<br>
+                            • Verantwortung von Common Components, Unit Tests<br>
+                            • Implementierung in C#, C/C++, Python<br>
+                            <span class="highlight">Bewertung: "jederzeit voll zufrieden"</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Technologie-Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h4>Backend Frameworks</h4>
+                    <div class="tech-list">
+                        FastAPI (Python), Spring Boot (Java), Wildfly, Entity Framework (C#), Jakarta EE, REST-API
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Programmiersprachen</h4>
+                    <div class="tech-list">
+                        Java, C#, Python, JavaScript, C (MISRA), PHP, COBOL (Grundkenntnisse)
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Frontend & Mobile</h4>
+                    <div class="tech-list">
+                        HTML, CSS, JavaScript, NodeJS, npm, Capacitor (Android)
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Datenbanken</h4>
+                    <div class="tech-list">
+                        PostgreSQL, Microsoft SQL, Oracle SQL, MySQL, MariaDB
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Development Tools</h4>
+                    <div class="tech-list">
+                        Visual Studio Code, Visual Studio Community, Eclipse, LDRA tool suite, Git, SVN, Maven, Jenkins
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Qualitätssicherung</h4>
+                    <div class="tech-list">
+                        Clean Code, TDD, Unit Tests (JUnit, NUnit), Integrationstests, Code Coverage (Jacoco),
+                        Black/White-Box Testing, SonarQube, LDRA
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Requirements & Modeling</h4>
+                    <div class="tech-list">
+                        Atlassian Jira, IBM Rational DOORS, Visure Requirements, UML, IBM Rational Rhapsody,
+                        Visual Paradigm, Enterprise Architect
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h4>Automotive Standards</h4>
+                    <div class="tech-list">
+                        <strong>AUTOSAR</strong> (Workshop & Praxis), <strong>ISO 26262</strong> (Functional Safety),
+                        CyberSecurity, MISRA C
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Studium und Schulbildung</h2>
+            <table>
+                <tr>
+                    <td class="date-col">04/2011 – 04/2013</td>
+                    <td class="content-col">
+                        <div class="company">Universität Paderborn</div>
+                        <div class="position">Master of Science, Informatik (Note 1,6) <span
+                                class="achievement-badge">Sehr gut</span></div>
+                        <div class="description">
+                            Schwerpunkt Softwaretechnik, Nebenfach Elektrotechnik<br>
+                            Masterarbeit: "Learning M-DNF in Boolean Circuits"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">10/2005 – 03/2011</td>
+                    <td class="content-col">
+                        <div class="company">Universität Paderborn</div>
+                        <div class="position">Bachelor of Science, Informatik (Note 2,6)</div>
+                        <div class="description">
+                            Nebenfach Elektrotechnik<br>
+                            Bachelorarbeit: "Aufgabenverteilung in Multiagentensystemen"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">06/2005</td>
+                    <td class="content-col">
+                        <div class="company">Carl-Severing Berufskolleg, Bielefeld</div>
+                        <div class="position">Fachhochschulreife (Note 2,0) <span class="achievement-badge">Gut</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">05/2002</td>
+                    <td class="content-col">
+                        <div class="company">Kuhlo-Realschule, Bielefeld</div>
+                        <div class="position">Fachoberschulreife</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📜 Zertifizierungen & Weiterbildungen</h2>
+            <div class="certifications">
+                <div class="cert-item">
+                    <div class="cert-title">AUTOSAR Workshop & Praxis (Vector Academy, Hella)</div>
+                    <div class="cert-details">
+                        Februar & Mai 2017 | Umfassende Schulung zu AUTOSAR-Fundamentals, RTE, BSW, Methodologie
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Functional Safety - ISO 26262 (Quint Academy & Kugler Maag Cie)</div>
+                    <div class="cert-details">
+                        Oktober & Dezember 2017 | Automotive Functional Safety mit Fokus auf Software-Entwicklung
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">Java EE 7 Intensivkurs (GEDOPLAN IT Training)</div>
+                    <div class="cert-details">
+                        Oktober 2016 | JPA 2.1, CDI 1.1, Maven 3 - Entwicklung serverseitiger Geschäftslogik
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-title">UNIX/Linux Einführung (RZF NRW)</div>
+                    <div class="cert-details">
+                        2023 | Erfolgreiche Teilnahme an Fortbildungsmaßnahme
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Ausbildung & Praktika</h2>
+            <table>
+                <tr>
+                    <td class="date-col">06/2005</td>
+                    <td class="content-col">
+                        <div class="company">Carl-Severing-Berufskolleg, Bielefeld</div>
+                        <div class="position">Staatl. gepr. Informationstechnischer Assistent (Note 2,0)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">08/2008 – 10/2008</td>
+                    <td class="content-col">
+                        <div class="company">Fecher e.K., Paderborn</div>
+                        <div class="description">Entwicklung von Unit Tests, C# Database Unit Tests, VMware
+                            Test-Umgebungen</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">10/2004 & 04/2004</td>
+                    <td class="content-col">
+                        <div class="company">OEDIV KG & KTI Distribution GmbH, Bielefeld</div>
+                        <div class="description">Auto-Installationsprogrammierung, Netzwerkadapter-Installation</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🌟 Weitere Qualifikationen</h2>
+            <table>
+                <tr>
+                    <td class="date-col">Sprachen</td>
+                    <td class="content-col">
+                        <strong>Englisch</strong> (verhandlungssicher), <strong>Französisch</strong> (Grundkenntnisse)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">Stärken (nach Gallup, Inc.)</td>
+                    <td class="content-col">
+                        Wiederherstellung, Wissbegier, Einzelwahrnehmung, Analytisch, Behutsamkeit,<br>
+                        Eigeninitiative, Zuverlässigkeit, Belastbarkeit, Teamfähigkeit
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">Arbeitsweise</td>
+                    <td class="content-col">
+                        Selbstständig, Sorgfältig, Zielorientiert, Strukturiert, Qualitätsbewusst
+                    </td>
+                </tr>
+                <tr>
+                    <td class="date-col">Interessen</td>
+                    <td class="content-col">
+                        Wissenschaftliche Artikel verfassen, Software entwickeln, Bloggen, Fußball,
+                        Fitness, Schwimmen, Fotografie, Lesen, Spaziergänge
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="signature-section">
+            Bielefeld, 31. Dezember 2025
+            <div style="margin-top: 50px;">
+                <p>_____________________________<br>
+                    <i>Stephan Epp</i>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
