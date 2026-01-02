@@ -44,6 +44,6 @@ place_image_exact(
     image_path="Unterschrift.png",
     page_num=2,      # This targets the THIRD page
     x_cm=1.5,        # 15 cm from the left
-    y_cm=23.6,       # 25 cm from the top
+    y_cm=23.7,       # 25 cm from the top
     width_cm=3.5     # Image width of 4.5 cm
 )
