@@ -1,4 +1,4 @@
-# Umgebung zum Signieren von Dokumenten
+# Signieren von Dokumenten
 
 Mit `wkhtmltopdf` wird die .pdf-Datei aus HMTL genereiert:
 
